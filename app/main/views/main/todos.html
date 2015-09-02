@@ -2,6 +2,12 @@
   Todos
 <:Body>
 <h1>Todos</h1>
+  {{ page._todos.each do |todo| }}
+  <h4><input type='checkbox' checked='{{ todo._completed}}'/>
+    {{ todo._name }}
+    <button e-click='todo.destroy'>X</button>
+  </h4>
+  {{ end }}
   <form e-submit='add_todo' role='form'>
     <div class='form-group'>
       <label>Task To Do</label>
